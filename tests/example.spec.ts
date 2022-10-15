@@ -5,3 +5,8 @@ test('Simple basic test', async ({page}) => {
     const pageTitle = await page.locator('h1')
     await expect(pageTitle).toContainText('Example Domain')
 });
+
+test('Clicking on Element', async ({page}) => {
+    await page.goto('http://zero.webappsecurity.com/')
+    
+});
