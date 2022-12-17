@@ -4,7 +4,7 @@
   "description": "Learn Playwright for automate testing",
   "main": "index.js",
   "scripts": {
-    "p:run:chrome": "playwright test --config=playwright.config.ts --project=Chromium",
+    "p:run:chrome": "playwright test --config=playwright.config.ts --project=Chromium --reporter=html",
     "p:run:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
     "p:run:webkit": "playwright test --config=playwright.config.ts --project=Webkit"
   },
