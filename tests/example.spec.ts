@@ -30,14 +30,18 @@ test('Clicking on Input @click-my-tag', async ({page}) => {
     await expect(errorMessage).toContainText('Login and/or password are wrong.')
 });
 
-test('Screenshot', async ({page}) => {
-    await page.goto('https://example.com/')
-    await page.screenshot({ path: 'screenshots/example.png', fullPage: true })
-})
+test.describe.only('Hooks', () => {
+    test.beforeEach(async ({page}) => {
+        await page.goto('https://example.com/')
+    })
 
-test('Single Element Screenshot', async ({page}) => {
-    await page.goto('https://example.com/')
-    const title = await page.$('h1')
-    await title.screenshot({ path: 'screenshots/exampleh1.png' })
+    test('Screenshot', async ({page}) => {
+        await page.screenshot({ path: 'screenshots/example.png', fullPage: true })
+    })
+    
+    test('Single Element Screenshot', async ({page}) => {
+        const title = await page.$('h1')
+        await title.screenshot({ path: 'screenshots/exampleh1.png' })
+    })
 })
 
