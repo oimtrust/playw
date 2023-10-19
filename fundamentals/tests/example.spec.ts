@@ -1,4 +1,5 @@
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
+import { loadHomePage, assertTitle } from "../helpers";
 
 test('Simple basic test', async ({page}) => {
     await page.goto("https://example.com/")
@@ -30,7 +31,7 @@ test('Clicking on Input @click-my-tag', async ({page}) => {
     await expect(errorMessage).toContainText('Login and/or password are wrong.')
 });
 
-test.describe.only('Hooks', () => {
+test.describe.parallel.only('Hooks', () => {
     test.beforeEach(async ({page}) => {
         await page.goto('https://example.com/')
     })
@@ -45,3 +46,8 @@ test.describe.only('Hooks', () => {
     })
 })
 
+test('Custom Helpers', async ({page}) => {
+    await loadHomePage(page);
+    // await page.pause();
+    await assertTitle(page);
+})

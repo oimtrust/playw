@@ -7,3 +7,4 @@ E2E Test Using [Playwright](https://playwright.dev/ "Playwright") for modern web
 * Run the command `npm install`
 * Run the command `npx playwright install`
 * Run the command to execute automation test `npx playwright test`
+* Or You can use this command to run : `npm run p:run:chrome`

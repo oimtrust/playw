@@ -6,7 +6,9 @@
   "scripts": {
     "p:run:chrome": "playwright test --config=playwright.config.ts --project=Chromium --reporter=html",
     "p:run:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
-    "p:run:webkit": "playwright test --config=playwright.config.ts --project=Webkit"
+    "p:run:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
+    "p:run:webkit:headed": "playwright test --config=playwright.config.ts --project=Webkit --headed",
+    "p:report": "playwright show-report"
   },
   "keywords": [
     "playwright",
