@@ -1,0 +1,23 @@
+{
+  "name": "end_to_end",
+  "version": "1.0.0",
+  "description": "Learn Playwright for automate testing",
+  "main": "index.js",
+  "scripts": {
+    "play:chrome": "playwright test --config=playwright.config.ts --project=Chromium --reporter=html",
+    "play:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
+    "play:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
+    "play:webkit:headed": "playwright test --config=playwright.config.ts --project=Webkit --headed",
+    "play:report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "javascript"
+  ],
+  "author": "oimtrust",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.27.0",
+    "prettier": "^2.7.1"
+  }
+}
