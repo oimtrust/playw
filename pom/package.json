@@ -9,6 +9,7 @@
   },
   "scripts": {
     "play:report": "playwright show-report",
-    "play:ui": "playwright test --ui"
+    "play:ui": "playwright test --ui",
+    "play:chrome": "playwright test --config=playwright.config.ts --project=Chromium --reporter=html"
   }
 }

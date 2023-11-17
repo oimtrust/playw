@@ -20,10 +20,6 @@ export class LoginPage {
   }
 
   // Define login page methods
-  async visit(path: string) {
-    await this.page.goto('http://zero.webappsecurity.com' + path)
-  }
-
   async login(username: string, password: string) {
     await this.usernameInput.fill(username)
     await this.passwordInput.fill(password)
