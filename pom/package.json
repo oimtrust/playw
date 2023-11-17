@@ -1,0 +1,14 @@
+{
+  "name": "pom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.9.1"
+  },
+  "scripts": {
+    "play:report": "playwright show-report",
+    "play:ui": "playwright test --ui"
+  }
+}
