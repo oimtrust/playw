@@ -2,7 +2,6 @@ import { test } from "@playwright/test"
 import { LoginPage } from '../pages/login.page'
 import { HomePage } from '../pages/home.page'
 
-
 test.describe.parallel('Login/ Logout Flow', () => {
   let loginPage: LoginPage
   let homePage: HomePage
@@ -24,7 +23,7 @@ test.describe.parallel('Login/ Logout Flow', () => {
   test('Positive scenario for login', async ({page}) => {
     await homePage.clickOnSignIn()
     await loginPage.login("username", "password")
-
+    await loginPage.wait(3000)
     await homePage.visit('/index.html')
     await loginPage.assertHome()
   })
