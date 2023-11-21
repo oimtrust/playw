@@ -9,6 +9,7 @@ export class LoginPage extends AbstractPage{
   readonly loginButton: Locator
   readonly errorMessage: Locator
   readonly homeTitle: Locator
+  readonly loginForm: Locator
 
   // Init selectors using constructor
   constructor(page: Page) {
@@ -18,6 +19,7 @@ export class LoginPage extends AbstractPage{
     this.loginButton = page.locator('text=Sign in')
     this.errorMessage = page.locator('.alert-error')
     this.homeTitle = page.locator('#homeMenu')
+    this.loginForm  = page.locator('#login_form')
   }
 
   // Define login page methods
@@ -33,5 +35,13 @@ export class LoginPage extends AbstractPage{
 
   async assertHome() {
     await expect(this.homeTitle).toContainText('Home')
+  }
+
+  async snapshotLoginForm() {
+    await expect(await this.loginForm.screenshot()).toMatchSnapshot('login_form.png')
+  }
+
+  async snapshotErrorMessage() {
+    await expect(await this.errorMessage.screenshot()).toMatchSnapshot('login_error.png')
   }
 }

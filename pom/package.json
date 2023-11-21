@@ -10,6 +10,7 @@
   "scripts": {
     "play:report": "playwright show-report",
     "play:ui": "playwright test --ui",
-    "play:chrome": "playwright test --config=playwright.config.ts --project=Chromium --reporter=html"
+    "play:chrome": "playwright test --config=playwright.config.ts --project=Chromium --reporter=html",
+    "play:visual:chrome": "playwright test --config=visual.config.ts --update-snapshots --project=chromium"
   }
 }
