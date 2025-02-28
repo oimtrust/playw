@@ -25,4 +25,33 @@ test.describe.parallel('API tests', () => {
     expect(responseBody.data.first_name).toBe('Janet');
     expect(responseBody.data.last_name).toBe('Weaver');
   });
+
+  test('Create User', async ({ request }) => {
+    const response = await request.post(`${baseURL}/users`, {
+      data: {
+        name: 'morpheus',
+        job: 'leader',
+      },
+    });
+    const responseBody = JSON.parse(await response.text());
+    expect(responseBody.name).toBe('morpheus');
+    expect(responseBody.job).toBe('leader');
+    });
+  
+  test('Update User', async ({ request }) => {
+    const response = await request.put(`${baseURL}/users/2`, {
+      data: {
+        name: 'morpheus',
+        job: 'zion resident',
+      },
+    });
+    const responseBody = JSON.parse(await response.text());
+    expect(responseBody.name).toBe('morpheus');
+    expect(responseBody.job).toBe('zion resident');
+  });
+
+  test('Delete User', async ({ request }) => {
+    const response = await request.delete(`${baseURL}/users/2`);
+    expect(response.status()).toBe(204);
+  });
 });
