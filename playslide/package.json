@@ -1,0 +1,19 @@
+{
+  "name": "playslide",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.9",
+    "allure-playwright": "^3.2.0",
+    "dotenv": "^16.4.7"
+  },
+  "scripts": {
+    "test:ui": "playwright test --ui",
+    "test:report": "allure generate allure-results --clean && allure open"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.33.0"
+  }
+}

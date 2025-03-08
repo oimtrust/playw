@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@data/*":  ["data/*"],
+      "@locator/*": ["locator/*"],
+      "@page/*": ["page/*"],
+      "@helper/*": ["helper/*"]
+    }
+  }
+}
