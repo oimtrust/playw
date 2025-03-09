@@ -1,6 +1,7 @@
 import { expect, Locator, Page } from '@playwright/test';
 import * as generalTestID from '@locator/general.locator';
 import { TestID } from "@locator/dashboard.locator";
+import * as generalData from '@data/general.data';
 
 export class DashboardPage {
     readonly page: Page
@@ -35,5 +36,9 @@ export class DashboardPage {
         await this.burgerMenuButton.click();
         await this.logoutButton.click();
         expect(await this.productTitle).toBeVisible();
+    }
+
+    async verifyProductTitle() {
+        expect(await this.productTitle).toContainText(generalData.Title.PRODUCT_TITLE);
     }
 }
